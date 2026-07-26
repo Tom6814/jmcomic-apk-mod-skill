@@ -49,7 +49,7 @@ git clone https://github.com/Tom6814/jmcomic-apk-mod-skill.git
 
 即使不使用 AI 辅助，`SKILL.md` 本身也是一份**完整的逆向修改手册**（800+ 行），包含：
 
-- 广告链路追踪方法论（Module 8038 → adKey → Module 8284 → first_links）
+- 广告链路追踪方法/思路（Module 8038 → adKey → Module 8284 → first_links）
 - Webpack chunk 依赖分析与孤儿代码清理
 - 5 个真实踩坑记录与避坑指南
 - 6 类绝对不能触碰的核心功能区域（Cookie、暗色模式、阅读器等）
