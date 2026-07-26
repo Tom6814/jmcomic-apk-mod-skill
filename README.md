@@ -91,14 +91,22 @@ Skill 内置了严格的误伤防护机制：
 
 ## 背景
 
-[JMComic3](https://github.com/Tom6814/JMComic3-APK-NO-Ads) 是一个流行的漫画阅读 Android 应用，基于 React + Webpack 构建。JMComic3-APK-NO-Ads 项目对其 APK 进行解包和逆向修改：
+本 Skill 来源于 [JMComic3-APK-NO-Ads](https://github.com/Tom6814/JMComic3-APK-NO-Ads) 项目的实战经验。JMComic3 是一个基于 React + Webpack 的漫画阅读 Android 应用，对其进行逆向修改需要：
 
-- 清除所有广告
-- 移除游戏/电影板块
-- 修复暗色模式
-- 替换自定义图标
+- 解包 APK，在数万行 minified JS 中追踪广告链路
+- 逐个 Webpack chunk 修补，全量搜索防止遗漏
+- 反复构建测试，排查白屏等误删问题
 
-本 Skill 将这一整套修改流程**标准化、自动化、可复现**，既降低了新版本适配的成本，也让社区贡献者能够更轻松地参与。
+一次完整的去广告修改通常需要 **3-5 小时的密集排查和验证**。本 Skill 将整个过程系统化、自动化，降低到 **分钟级别**。
+
+### 为什么是独立仓库
+
+Skill 和 APK 源码是不同的产物，面向不同的受众：
+
+- **[JMComic3-APK-NO-Ads](https://github.com/Tom6814/JMComic3-APK-NO-Ads)**（28MB+）— 给想要下载成品 APK 或研究具体代码的用户
+- **本仓库**（18KB）— 给想要自己动手修改、适配新版本的用户
+
+将 Skill 独立出来的理由与 `react-devtools` 独立于 `react` 仓库相同：**不同受众，不同仓库**。
 
 ---
 
